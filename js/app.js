@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+/* NusaAcademy.ID — logika frontend (SPA). Memanggil backend lewat run() di api.js */
+const $=i=>document.getElementById(i),E=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const Rp=n=>'Rp '+String(Math.round(+n||0)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+const S={pub:null,d:null,tok:localStorage.getItem('tok')||'',i:0,up:0,q:'',st:'',f1:'',f2:'',fp:'',r:14,pg:'ringkasan'},A={};
+const IC={x:'M6 6l12 12M18 6L6 18',plus:'M12 5v14M5 12h14',edit:'M4 20h4L19 9l-4-4L4 16v4z',trash:'M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13',chat:'M4 5h16v11H9l-5 4V5z',moon:'M20 14A8 8 0 1110 4a6 6 0 0010 10z',out:'M9 4H4v16h5M16 8l4 4-4 4M20 12H9',dl:'M12 4v12M7 11l5 5 5-5M4 20h16',l:'M19 12H5M11 6l-6 6 6 6',r:'M5 12h14M13 6l6 6-6 6'};
+const ic=n=>`<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[n]}"/></svg>`;
+const toast=(m,e)=>{const t=document.createElement('div');t.className='t'+(e?' e':'');t.textContent=m;$('toast').append(t);setTimeout(()=>t.remove(),4000);};
+const im=(u,c)=>u?`<img class="${c}" src="${E(u)}" alt="" loading="lazy" decoding="async" onerror="this.outerHTML='<div class=&quot;ph ${c}&quot;></div>'">`:`<div class="ph ${c}"></div>`;
+=======
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 const $=i=>document.getElementById(i),E=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const Rp=n=>'Rp '+String(Math.round(+n||0)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
 const S={pub:null,d:null,tok:localStorage.getItem('tok')||'',i:0,up:0,q:'',st:'',pg:'ringkasan',rg:14,pf:'',df:'',dt:''},A={};
@@ -6,16 +19,41 @@ const ic=n=>`<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="${I
 const toast=(m,e)=>{const t=document.createElement('div');t.className='t'+(e?' e':'');t.textContent=m;$('toast').append(t);setTimeout(()=>t.remove(),4000);};
 const mk=(c,t)=>`<div class="ph ${c}"><span>${E(t||'')}</span></div>`;
 const im=(u,c,t)=>u?`<img class="${c}" src="${E(u)}" alt="${E(t||'')}" loading="lazy" decoding="async" onerror="this.outerHTML=this.dataset.f" data-f="${E(mk(c,t))}">`:mk(c,t);
+<<<<<<< HEAD
+=======
+>>>>>>> 2f2faa1 (Upload pertama)
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 const yt=u=>(String(u).match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/)||[])[1];
 function view(v){['pub','auth','adm'].forEach(x=>$(x).hidden=x!==v);const h=document.documentElement;h.dataset.v=v;h.dataset.t=localStorage.getItem('tm')||(v==='adm'?'dark':'light');scrollTo(0,0);}
 function tema(){const h=document.documentElement,t=h.dataset.t==='dark'?'light':'dark';h.dataset.t=t;localStorage.setItem('tm',t);}
 function mod(h){const m=$('mod');m.innerHTML=`<div class="mb" role="dialog" aria-modal="true">${h}</div>`;m.hidden=false;const f=m.querySelector('input:not(.trap input),textarea,select,button');f&&f.focus();}
 function unmod(){$('mod').hidden=true;$('mod').innerHTML='';}
+<<<<<<< HEAD
 const konfirm=(m,y)=>new Promise(r=>{mod(`<h3>Konfirmasi</h3><p>${E(m)}</p><div class="ac"><button class="btn o" id="kn">Batal</button><button class="btn dg" id="ky">${E(y||'Ya, hapus')}</button></div>`);$('kn').onclick=()=>{unmod();r(0)};$('ky').onclick=()=>{unmod();r(1)};});
+=======
+const konfirm=m=>new Promise(r=>{mod(`<h3>Konfirmasi</h3><p>${E(m)}</p><div class="ac"><button class="btn o" id="kn">Batal</button><button class="btn dg" id="ky">Ya, hapus</button></div>`);$('kn').onclick=()=>{unmod();r(0)};$('ky').onclick=()=>{unmod();r(1)};});
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 function go(s){try{const e=document.querySelector(s);e&&e.scrollIntoView({behavior:'smooth'});}catch(x){}}
 const cta=(t,l)=>{l=String(l||'');if(/^https?:/.test(l))return `<a class="btn" target="_blank" rel="noopener" href="${E(l)}">${E(t)}</a>`;if(l.indexOf('checkout:')===0)return `<button class="btn" data-co="${E(l.slice(9))}">${E(t)}</button>`;return `<button class="btn" data-go="${E(l||'#produk')}">${E(t)}</button>`;};
 
 /* ===== Landing publik (render dari memori = instan) ===== */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+function pub(){const p=S.pub,b=p.brand,k=p.kelas,wa=b.wa?'https://wa.me/'+E(b.wa):'';
+$('pub').innerHTML=`<header class="nav"><div class="w nb"><b class="lg">${b.logo?`<img src="${E(b.logo)}" alt="" style="height:28px;vertical-align:middle;margin-right:8px">`:''}${E(b.nama)}</b><nav aria-label="Menu utama"><button data-go="#produk">Produk</button><button data-go="#kelas">Kurikulum</button><button data-go="#hasil">Hasil</button><button data-go="#testi">Testimoni</button></nav><span class="sp"></span><button class="btn s o" aria-label="Ganti tema" onclick="tema()">${ic('moon')}</button><button class="btn s" onclick="masukAdm()">Masuk</button></div></header>
+${p.hero.length?`<section class="hero"><div class="w">${p.hero.map((h,i)=>`<article class="sl${i?'':' on'}"><div><h1>${E(h.judul)}</h1><p class="mu">${E(h.subjudul)}</p>${cta(h.cta_teks||'Mulai',h.cta_link)}</div>${im(h.gambar_url,'hi')}</article>`).join('')}<div class="ctl"><button class="btn s o" aria-label="Slide sebelumnya" data-a="sl" data-id="-1">${ic('l')}</button>${p.hero.map((h,i)=>`<button class="dot${i?'':' on'}" aria-label="Slide ${i+1}" data-a="sg" data-id="${i}"></button>`).join('')}<button class="btn s o" aria-label="Slide berikutnya" data-a="sl" data-id="1">${ic('r')}</button></div></div></section>`:''}
+<section id="produk" class="w sec"><h2>Pilih Materi Pembelajaran Terbaik</h2><p class="mu">${E(b.tagline)}</p><div class="g3">${p.produk.map(x=>`<article class="card"><span class="chip">${E(x.tipe)}</span>${im(x.gambar_url,'ci')}<h3>${E(x.nama)}</h3><p class="mu">${E(x.deskripsi)}</p><div class="pr"><b>${Rp(x.harga)}</b>${x.harga_coret>x.harga?`<s>${Rp(x.harga_coret)}</s><span class="chip">-${Math.round(100-x.harga/x.harga_coret*100)}%</span>`:''}</div><button class="btn w100" data-co="${E(x.id)}">Beli Sekarang</button></article>`).join('')}</div></section>
+${k?`<section id="kelas" class="w sec"><h2>${E(k.nama)}</h2><p class="mu">${E(k.durasi)} · ${E(k.level)}</p><div class="g2"><div><div id="vid" class="vf" data-v="${yt(k.video_youtube_url)||''}" data-ap="${k.video_autoplay==='tidak'?0:1}"></div><button class="btn s o" data-a="mute">Aktifkan suara</button></div><div>${p.modul.map((m,i)=>`<details${i?'':' open'}><summary>Modul ${m.modul_ke}: ${E(m.judul)}</summary><ul>${String(m.topik).split('\n').filter(Boolean).map(t=>`<li>${E(t)}</li>`).join('')}</ul></details>`).join('')}<p class="mu">${E(k.deskripsi)}</p></div></div></section>`:''}
+<section id="hasil" class="w sec"><h2>Bukti Nyata Hasil Karya Member</h2><div class="g3">${p.hasil.map(r=>`<article class="card">${im(r.gambar_url,'ci')}<small>${E(String(r.tanggal).slice(0,10))} · ${E(r.nama_member)}</small><h3>${E(r.judul)}</h3><p class="mu">${E(r.ringkasan)}</p></article>`).join('')}</div></section>
+<section id="testi" class="w sec"><h2>Apa Kata Mereka?</h2><div class="g3">${p.testi.map(t=>`<article class="card"><div class="star" role="img" aria-label="Rating ${t.rating} dari 5">${'★'.repeat(t.rating)}${'☆'.repeat(5-t.rating)}</div><p>"${E(t.isi)}"</p><b>${E(t.nama)}</b><br><small>${E(t.peran)}</small></article>`).join('')}</div></section>
+<section class="band"><h2>Siap Tingkatkan Keterampilan Anda?</h2><p>Mulai belajar hari ini atau tanya admin lebih dulu.</p>${cta('Lihat Produk','#produk')} ${wa?`<a class="btn" target="_blank" rel="noopener" href="${wa}?text=${encodeURIComponent('Halo Admin, saya ingin konsultasi')}">Chat WhatsApp</a>`:''}</section>
+<footer><div class="w">© ${new Date().getFullYear()} ${E(b.nama)} · ${E(b.email)}</div></footer>
+${wa?`<a class="btn fab" target="_blank" rel="noopener" aria-label="Chat WhatsApp admin" href="${wa}">${ic('chat')}</a>`:''}`;
+clearInterval(S.tm);S.i=0;if(p.hero.length>1)S.tm=setInterval(()=>!document.hidden&&sl(S.i+1),5000);
+const v=$('vid');if(v&&v.dataset.v)new IntersectionObserver((en,o)=>{if(en[0].isIntersecting){v.innerHTML=`<iframe id="vf" src="https://www.youtube.com/embed/${v.dataset.v}?autoplay=${v.dataset.ap}&mute=1&playsinline=1&rel=0&enablejsapi=1" title="Video profil" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;o.disconnect();}},{threshold:.6}).observe(v);
+=======
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 function pub(){const p=S.pub,b=p.brand,k=p.kelas,wa=b.wa?'https://wa.me/'+E(b.wa):'',w2=t=>wa+'?text='+encodeURIComponent(t),p0=(p.produk||[])[0],mu=k&&k.video_muted==='tidak'?0:1;
 const lg=b.logo?`<img src="${E(b.logo)}" alt="${E(b.nama)}" style="height:34px">`:`<span class="lgm">${E(b.nama.charAt(0))}</span>${E(b.nama)}`;
 const FT=[['Akses Seketika','Link materi dikirim lewat WhatsApp & email begitu data Anda tercatat.'],['Studi Kasus Riil','Bukan sekadar teori: dibongkar langsung dari kampanye nyata.'],['Grup Tanya Jawab','Komunitas eksklusif dan sesi tanya jawab bulanan bersama mentor.']];
@@ -31,6 +69,10 @@ ${k?`<div class="secb"><section id="kelas" class="w sec"><span class="chip">Stru
 ${wa?`<a class="btn fab" target="_blank" rel="noopener" aria-label="Chat WhatsApp admin" href="${wa}">${ic('chat')}</a>`:''}`;
 clearInterval(S.tm);S.i=0;if(p.hero.length>1)S.tm=setInterval(()=>!document.hidden&&sl(S.i+1),5000);
 const v=$('vid');if(v&&v.dataset.v)new IntersectionObserver((en,o)=>{if(en[0].isIntersecting){v.innerHTML=`<iframe id="vf" src="https://www.youtube.com/embed/${v.dataset.v}?autoplay=${v.dataset.ap}&mute=${v.dataset.mu}&playsinline=1&rel=0&enablejsapi=1" title="Video profil" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;o.disconnect();}},{threshold:.6}).observe(v);
+<<<<<<< HEAD
+=======
+>>>>>>> 2f2faa1 (Upload pertama)
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 let x0=0;const h=document.querySelector('.hero');if(h){h.ontouchstart=e=>x0=e.touches[0].clientX;h.ontouchend=e=>{const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)sl(S.i+(d<0?1:-1));};}}
 function sl(i){const s=document.querySelectorAll('.sl'),n=s.length;if(!n)return;S.i=(i+n)%n;s.forEach((e,j)=>e.classList.toggle('on',j===S.i));document.querySelectorAll('.dot').forEach((e,j)=>e.classList.toggle('on',j===S.i));}
 A.sl=v=>sl(S.i+ +v);A.sg=v=>sl(+v);
@@ -54,7 +96,15 @@ if(!d.dup)run('kirimNotif',d.id).then(r=>{const n=$('nt');if(n)n.textContent=r.s
 
 /* ===== Login ===== */
 function auth(){const b=S.pub?S.pub.brand.nama:'NusaAcademy.ID';
+<<<<<<< HEAD
 $('auth').innerHTML=`<div class="ac1"><div class="card lgn"><b class="lg">${E(b)}</b><h2>Login Dashboard</h2><p class="mu">Khusus akun staf, instruktur, dan superadmin terdaftar.</p><p class="mu cn">Masukkan email terdaftar untuk menerima kode masuk.</p><form id="of"><label for="oe">Email terdaftar</label><input id="oe" type="email" required autocomplete="email"><button class="btn o w100" style="margin-top:8px">Kirim kode</button></form><div id="ob" hidden><label for="oc">Kode 6 digit</label><input id="oc" inputmode="numeric" maxlength="6" autocomplete="one-time-code"><button class="btn w100" style="margin-top:8px" data-a="vo">Masuk</button></div><p id="am" class="er" role="alert"></p><button class="btn s o" onclick="view('pub')">← Kembali ke situs</button></div></div>`;
+=======
+<<<<<<< HEAD
+$('auth').innerHTML=`<div class="ac1"><div class="card lgn"><b class="lg">${E(b)}</b><h2>Login Dashboard</h2><p class="mu">Khusus akun staf dan superadmin terdaftar. Kode masuk dikirim ke email Anda.</p><form id="of"><label for="oe">Email terdaftar</label><input id="oe" type="email" required autocomplete="email"><button class="btn o w100" style="margin-top:8px">Kirim kode</button></form><div id="ob" hidden><label for="oc">Kode 6 digit</label><input id="oc" inputmode="numeric" maxlength="6" autocomplete="one-time-code"><button class="btn w100" style="margin-top:8px" data-a="vo">Masuk</button></div><p id="am" class="er" role="alert"></p><button class="btn s o" onclick="view('pub')">← Kembali ke situs</button></div></div>`;
+=======
+$('auth').innerHTML=`<div class="ac1"><div class="card lgn"><b class="lg">${E(b)}</b><h2>Login Dashboard</h2><p class="mu">Khusus akun staf, instruktur, dan superadmin terdaftar.</p><form id="of"><label for="oe">Email terdaftar</label><input id="oe" type="email" required autocomplete="email"><button class="btn o w100" style="margin-top:8px">Kirim kode</button></form><div id="ob" hidden><label for="oc">Kode 6 digit</label><input id="oc" inputmode="numeric" maxlength="6" autocomplete="one-time-code"><button class="btn w100" style="margin-top:8px" data-a="vo">Masuk</button></div><p id="am" class="er" role="alert"></p><button class="btn s o" onclick="view('pub')">← Kembali ke situs</button></div></div>`;
+>>>>>>> 2f2faa1 (Upload pertama)
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 $('of').onsubmit=async e=>{e.preventDefault();$('am').textContent='';try{await run('mintaOtp',$('oe').value);$('ob').hidden=false;$('oc').focus();toast('Jika email terdaftar, kode dikirim.');}catch(x){$('am').textContent=x.message;}};}
 A.vo=async()=>{try{const r=await run('verifOtp',$('oe').value,$('oc').value);if(!r.success)throw new Error(r.message);masuk(r.data);}catch(x){$('am').textContent=x.message;}};
 A.out=()=>{run('logout',S.tok).catch(()=>{});S.tok='';S.d=null;localStorage.removeItem('tok');view('pub');};
@@ -71,12 +121,38 @@ HasilKelas:['Hasil Kelas',[['judul','Judul'],['nama_member','Nama member'],['rin
 Testimoni:['Testimoni',[['nama','Nama'],['peran','Peran'],['isi','Isi testimoni','ta'],['avatar_url','Avatar','img'],['rating','Rating (1-5)','n'],['status','Status','st']]],
 Kelas:['Kelas & Video Profil',[['nama','Nama kelas'],['durasi','Durasi'],['level','Level'],['deskripsi','Deskripsi','ta'],['video_youtube_url','URL video YouTube'],['video_autoplay','Autoplay saat terlihat','yn'],['video_muted','Mute (wajib agar autoplay)','yn']]],
 Kurikulum:['Kurikulum Modul',[['modul_ke','Modul ke-','n'],['judul','Judul modul'],['topik','Topik (satu per baris)','ta'],['urutan','Urutan','n']]]};
+<<<<<<< HEAD
 const M=[['ringkasan','Ringkasan'],['Hero','Hero Slideshow'],['Produk','Katalog Produk'],['HasilKelas','Hasil Kelas'],['Testimoni','Testimoni'],['kelas','Kelas & Kurikulum'],['leads','Leads & CRM'],['pengaturan','Pengaturan','s'],['pengguna','Role Pengguna','s'],['migrasi','Migrasi Data','s'],['log','Log Aktivitas']];
+=======
+<<<<<<< HEAD
+const M=[['ringkasan','Ringkasan'],['Hero','Hero Slideshow'],['Produk','Katalog Produk'],['HasilKelas','Hasil Kelas'],['Testimoni','Testimoni'],['kelas','Kelas & Kurikulum'],['leads','Leads & CRM'],['log','Log Aktivitas'],['pengaturan','Pengaturan','s'],['pengguna','Role Pengguna','s']];
+=======
+const M=[['ringkasan','Ringkasan'],['Hero','Hero Slideshow'],['Produk','Katalog Produk'],['HasilKelas','Hasil Kelas'],['Testimoni','Testimoni'],['kelas','Kelas & Kurikulum'],['leads','Leads & CRM'],['pengaturan','Pengaturan','s'],['pengguna','Role Pengguna','s'],['log','Log Aktivitas']];
+>>>>>>> 2f2faa1 (Upload pertama)
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 function adm(){const d=S.d,sa=d.user.role==='superadmin';
 $('adm').innerHTML=`<div class="ly"><aside class="sb"><b class="lg">${E(S.pub?S.pub.brand.nama:'')}</b><nav aria-label="Menu dashboard">${M.filter(m=>!m[2]||sa).map(m=>`<button data-a="pg" data-id="${m[0]}">${m[1]}</button>`).join('')}</nav><div class="sbf"><small>${E(d.user.email)} · ${d.user.role}</small><button class="btn s o" onclick="tema()" aria-label="Ganti tema">${ic('moon')}</button><button class="btn s o" data-a="out" aria-label="Keluar">${ic('out')}</button><button class="btn s o" onclick="view('pub')">Lihat situs</button></div></aside><main class="mn" id="mn"></main></div>`;pg(S.pg);}
 function pg(r){S.pg=r;document.querySelectorAll('.sb nav button').forEach(b=>b.classList.toggle('on',b.dataset.id===r));$('mn').innerHTML=PG[r]();}
 A.pg=pg;
+<<<<<<< HEAD
 const PG={ringkasan:ring,Hero:()=>lst('Hero'),Produk:()=>lst('Produk'),HasilKelas:()=>lst('HasilKelas'),Testimoni:()=>lst('Testimoni'),kelas:()=>lst('Kelas')+lst('Kurikulum'),leads:ld,pengaturan:()=>pgt()+DM,pengguna:pgn,migrasi:mig,log:logp};
+=======
+<<<<<<< HEAD
+const PG={ringkasan:ring,Hero:()=>lst('Hero'),Produk:()=>lst('Produk'),HasilKelas:()=>lst('HasilKelas'),Testimoni:()=>lst('Testimoni'),kelas:()=>lst('Kelas')+lst('Kurikulum'),leads:ld,pengaturan:pgt,pengguna:pgn,log:lg};
+function ring(){const d=S.d,n=S.r,L=d.Leads||[],K=d.Kunjungan||[],sum=a=>a.reduce((p,c)=>p+c,0);
+const days=[...Array(n)].map((_,i)=>new Date(Date.now()+7*36e5-(n-1-i)*864e5).toISOString().slice(0,10));
+const ls=days.map(x=>L.filter(l=>String(l.waktu).slice(0,10)===x).length),vs=days.map(x=>{const k=K.find(z=>String(z.tanggal).slice(0,10)===x);return k?+k.jumlah_kunjungan:0;}),vis=sum(vs),lc=sum(ls);
+const pt=a=>{const m=Math.max(...a,1);return a.map((v,i)=>`${i*(600/(n-1))},${170-v/m*150}`).join(' ');};
+const cnt={};L.filter(l=>days.includes(String(l.waktu).slice(0,10))).forEach(l=>cnt[l.produk_id]=(cnt[l.produk_id]||0)+1);
+const tp=d.Produk.map(p=>[p.nama,cnt[p.id]||0]).sort((a,b)=>b[1]-a[1]).slice(0,5),mx=Math.max(1,...tp.map(x=>x[1]));
+return `<div class="hd"><h2>Ringkasan & Analitik</h2><div class="im"><select aria-label="Rentang tanggal" data-a="rg">${[7,14,30,90].map(x=>`<option value="${x}"${x===n?' selected':''}>${x} hari terakhir</option>`).join('')}</select><small>Kuota email: ${d.kuota}</small></div></div><div class="kp"><div class="card"><small>Kunjungan (${n} hari)</small><b>${vis}</b></div><div class="card"><small>Leads (${n} hari)</small><b>${lc}</b></div><div class="card"><small>Konversi</small><b>${vis?(lc/vis*100).toFixed(1):0}%</b></div><div class="card"><small>Total leads</small><b>${L.length}</b></div></div>
+<div class="g2"><div class="card"><h3>Leads vs Kunjungan (${n} hari)</h3><svg class="ch" viewBox="0 0 600 180" role="img" aria-label="Grafik leads dan kunjungan"><polyline points="${pt(vs)}" fill="none" stroke="var(--mu)" stroke-width="2" stroke-dasharray="5 4"/><polyline points="${pt(ls)}" fill="none" stroke="var(--ac)" stroke-width="3"/></svg><small>Garis tebal: leads · putus-putus: kunjungan (skala dinormalisasi)</small></div>
+<div class="card"><h3>Produk Paling Diminati</h3>${tp.map(x=>`<p>${E(x[0])} <b>${x[1]}</b><br><svg width="100%" height="8"><rect width="100%" height="8" fill="var(--ln)"/><rect width="${x[1]/mx*100}%" height="8" fill="var(--ac)"/></svg></p>`).join('')}</div></div>`;}
+function lst(n){const [t,f]=CF[n],im0=f.find(x=>x[2]==='img'),rows=(S.d[n]||[]).slice().sort((a,b)=>(a.urutan||a.modul_ke||0)-(b.urutan||b.modul_ke||0)),hs=f.some(x=>x[0]==='status');
+return `<div class="hd"><h2>${t}</h2><button class="btn" data-a="ed" data-id="${n}|">${ic('plus')} Tambah</button></div><div class="tw"><table class="tb"><thead><tr><th></th><th>${f[0][1]}</th><th>${hs?'Status':''}</th><th></th></tr></thead><tbody>${rows.map(r=>`<tr><td>${im0?im(r[im0[0]],'th'):''}</td><td data-l="${E(f[0][1])}"><b>${E(r[f[0][0]])}</b></td><td data-l="Status">${hs?`<label class="sw"><input type="checkbox" aria-label="Aktif" ${r.status==='aktif'?'checked':''} data-a="tg" data-id="${n}|${E(r.id)}"><span></span></label>`:''}</td><td class="ac"><button class="btn s o" aria-label="Ubah" data-a="ed" data-id="${n}|${E(r.id)}">${ic('edit')}</button><button class="btn s o" aria-label="Hapus" data-a="del" data-id="${n}|${E(r.id)}">${ic('trash')}</button></td></tr>`).join('')||'<tr><td colspan="4">Belum ada data.</td></tr>'}</tbody></table></div>`;}
+=======
+const PG={ringkasan:ring,Hero:()=>lst('Hero'),Produk:()=>lst('Produk'),HasilKelas:()=>lst('HasilKelas'),Testimoni:()=>lst('Testimoni'),kelas:()=>lst('Kelas')+lst('Kurikulum'),leads:ld,pengaturan:()=>pgt()+DM,pengguna:pgn,log:logp};
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 function ring(){const d=S.d,L=d.Leads||[],K=d.Kunjungan||[],vis=K.reduce((a,k)=>a+(+k.jumlah_kunjungan||0),0),wk=Date.now()-7*864e5;
 const days=[...Array(S.rg)].map((_,i)=>new Date(Date.now()+7*36e5-(S.rg-1-i)*864e5).toISOString().slice(0,10));
 const ls=days.map(x=>L.filter(l=>String(l.waktu).slice(0,10)===x).length),vs=days.map(x=>{const k=K.find(z=>String(z.tanggal).slice(0,10)===x);return k?+k.jumlah_kunjungan:0;});
@@ -87,6 +163,10 @@ return `<div class="hd"><h2>Ringkasan & Analitik</h2><span><select aria-label="R
 <div class="card"><h3>Produk Paling Diminati</h3>${tp.map(x=>`<p>${E(x[0])} <b>${x[1]}</b><br><svg width="100%" height="8"><rect width="100%" height="8" fill="var(--ln)"/><rect width="${x[1]/mx*100}%" height="8" fill="var(--ac)"/></svg></p>`).join('')}</div></div>`;}
 function lst(n){const [t,f]=CF[n],im0=f.find(x=>x[2]==='img'),rows=(S.d[n]||[]).slice().sort((a,b)=>(a.urutan||a.modul_ke||0)-(b.urutan||b.modul_ke||0)),hs=f.some(x=>x[0]==='status'),hu=f.some(x=>x[0]==='urutan');
 return `<div class="hd"><h2>${t}</h2><button class="btn" data-a="ed" data-id="${n}|">${ic('plus')} Tambah</button></div><div class="tw"><table class="tb"><thead><tr><th></th><th>${f[0][1]}</th><th>${hs?'Status':''}</th><th></th></tr></thead><tbody>${rows.map(r=>`<tr><td>${im0?im(r[im0[0]],'th'):''}</td><td data-l="${E(f[0][1])}"><b>${E(r[f[0][0]])}</b></td><td data-l="Status">${hs?`<label class="sw"><input type="checkbox" aria-label="Aktif" ${r.status==='aktif'?'checked':''} data-a="tg" data-id="${n}|${E(r.id)}"><span></span></label>`:''}</td><td class="ac">${hu?`<button class="btn s o" aria-label="Naik" data-a="mv" data-id="${n}|${E(r.id)}|-1">↑</button><button class="btn s o" aria-label="Turun" data-a="mv" data-id="${n}|${E(r.id)}|1">↓</button>`:''}<button class="btn s o" aria-label="Ubah" data-a="ed" data-id="${n}|${E(r.id)}">${ic('edit')}</button><button class="btn s o" aria-label="Hapus" data-a="del" data-id="${n}|${E(r.id)}">${ic('trash')}</button></td></tr>`).join('')||'<tr><td colspan="4">Belum ada data.</td></tr>'}</tbody></table></div>`;}
+<<<<<<< HEAD
+=======
+>>>>>>> 2f2faa1 (Upload pertama)
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 function fld(k,l,t,v){v=v==null?'':v;const i='f_'+k;
 if(t==='ta')return `<label for="${i}">${l}</label><textarea id="${i}" name="${k}">${E(v)}</textarea>`;
 if(t==='st'||t==='yn'){const o=t==='st'?['aktif','nonaktif']:['ya','tidak'];return `<label for="${i}">${l}</label><select id="${i}" name="${k}">${o.map(x=>`<option${x===(v||o[0])?' selected':''}>${x}</option>`).join('')}</select>`;}
@@ -106,6 +186,31 @@ function pubBaru(){run('getKontenPublik').then(r=>{S.pub=r;localStorage.setItem(
 A.tg=(v,el)=>{const [n,id]=v.split('|'),r=S.d[n].find(x=>x.id===id),o=r.status;r.status=el.checked?'aktif':'nonaktif';run('simpanItem',S.tok,n,{id:id,status:r.status}).then(x=>{if(!x.success)throw new Error(x.message);pubBaru();}).catch(e=>{r.status=o;el.checked=o==='aktif';toast(e.message,1);});};
 A.del=async v=>{const [n,id]=v.split('|');if(!await konfirm('Hapus data ini? Tindakan tidak dapat dibatalkan.'))return;const L=S.d[n],i=L.findIndex(x=>x.id===id),it=L[i];L.splice(i,1);pg(S.pg);
 run('hapusItem',S.tok,n,id).then(r=>{if(!r.success)throw new Error(r.message);pubBaru();toast('Terhapus');}).catch(e=>{L.splice(i,0,it);pg(S.pg);toast(e.message,1);});};
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const flt=()=>{const q=S.q.toLowerCase();return(S.d.Leads||[]).filter(l=>{const t=String(l.waktu).slice(0,10);return(!S.st||l.status_followup===S.st)&&(!S.fp||l.produk_id===S.fp)&&(!S.f1||t>=S.f1)&&(!S.f2||t<=S.f2)&&(!q||(l.nama+l.email+l.no_wa+l.profesi).toLowerCase().includes(q));});};
+function lrows(){const P=Object.fromEntries(S.d.Produk.map(p=>[p.id,p.nama])),L=flt().slice(0,200);
+return L.map(l=>`<tr><td data-l="Waktu">${E(String(l.waktu).slice(0,16))}</td><td data-l="Nama"><b>${E(l.nama)}</b><br><small>${E(l.profesi)}</small></td><td data-l="Kontak">${E(l.no_wa)}<br><small>${E(l.email)}</small></td><td data-l="Produk">${E(P[l.produk_id]||l.produk_id)}</td><td data-l="Follow-up"><select aria-label="Status follow-up" data-a="fu" data-id="${E(l.id)}">${['baru','dihubungi','closing','batal'].map(s=>`<option${s===l.status_followup?' selected':''}>${s}</option>`).join('')}</select></td><td data-l="Notif"><small>Email: ${E(l.status_notif_email)}<br>WA: ${E(l.status_notif_wa)}</small></td><td class="ac"><a class="btn s o" target="_blank" rel="noopener" aria-label="Chat WhatsApp ${E(l.nama)}" href="https://wa.me/${E(String(l.no_wa).replace(/\D/g,''))}">${ic('chat')}</a></td></tr>`).join('')||'<tr><td colspan="7">Tidak ada leads.</td></tr>';}
+function ld(){return `<div class="hd"><h2>Leads & CRM</h2><div class="im"><button class="btn o" data-a="csv">${ic('dl')} CSV</button><button class="btn" data-a="xl">${ic('dl')} XLSX</button></div></div><div class="fl"><input type="search" placeholder="Cari nama, email, WA…" aria-label="Cari leads" value="${E(S.q)}" data-a="q"><select aria-label="Filter status" data-a="st">${['','baru','dihubungi','closing','batal'].map(s=>`<option value="${s}"${s===S.st?' selected':''}>${s||'Semua status'}</option>`).join('')}</select><input type="date" aria-label="Dari tanggal" data-a="f1" value="${E(S.f1)}"><input type="date" aria-label="Sampai tanggal" data-a="f2" value="${E(S.f2)}"><select aria-label="Filter produk" data-a="fp"><option value="">Semua produk</option>${S.d.Produk.map(p=>`<option value="${E(p.id)}"${p.id===S.fp?' selected':''}>${E(p.nama)}</option>`).join('')}</select></div><div class="tw"><table class="tb"><thead><tr><th>Waktu</th><th>Nama</th><th>Kontak</th><th>Produk</th><th>Follow-up</th><th>Notif</th><th></th></tr></thead><tbody id="lb">${lrows()}</tbody></table></div>`;}
+A.fu=(id,el)=>{const l=S.d.Leads.find(x=>x.id===id),o=l.status_followup;l.status_followup=el.value;run('ubahFollowup',S.tok,id,el.value).then(r=>{if(!r.success)throw new Error(r.message);}).catch(e=>{l.status_followup=o;el.value=o;toast(e.message,1);});};
+A.csv=()=>{const H=['id','waktu','nama','profesi','no_wa','email','produk_id','status_followup','status_notif_email','status_notif_wa'],q=v=>{v=String(v==null?'':v);return '"'+(/^[=+\-@]/.test(v)?"'"+v:v).replace(/"/g,'""')+'"';},t=[H.join(',')].concat(flt().map(l=>H.map(h=>q(l[h])).join(','))).join('\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+t],{type:'text/csv'}));a.download='leads.csv';a.click();};
+A.xl=()=>{if(!window.XLSX)return toast('Pustaka XLSX belum termuat, coba lagi.',1);const H=['id','waktu','nama','profesi','no_wa','email','produk_id','status_followup','status_notif_email','status_notif_wa'],r=flt().map(l=>H.map(h=>{const v=l[h]==null?'':String(l[h]);return /^[=+\-@]/.test(v)?"'"+v:v;})),w=XLSX.utils.book_new();XLSX.utils.book_append_sheet(w,XLSX.utils.aoa_to_sheet([H,...r]),'Leads');XLSX.writeFile(w,'leads.xlsx');};
+async function segar(){const r=await run('getDashboard',S.tok);if(!r.success)throw new Error(r.message);S.d=r.data;pg(S.pg);pubBaru();}
+A.dm1=async()=>{try{const r=await run('isiDataDummy',S.tok);if(!r.success)throw new Error(r.message);await segar();toast('Data dummy terisi (hanya pada sheet yang kosong).');}catch(e){toast(e.message,1);}};
+A.dm0=async()=>{if(!await konfirm('Hapus semua data dummy (id berawalan dm)? Data asli tidak disentuh.'))return;try{const r=await run('hapusDummy',S.tok);if(!r.success)throw new Error(r.message);await segar();toast('Data dummy dihapus.');}catch(e){toast(e.message,1);}};
+function lg(){return `<div class="hd"><h2>Log Aktivitas</h2></div><div class="tw"><table class="tb"><thead><tr><th>Waktu</th><th>Pengguna</th><th>Aksi</th><th>Target</th></tr></thead><tbody>${(S.d.Log||[]).map(l=>`<tr><td data-l="Waktu">${E(String(l.waktu).slice(0,16))}</td><td data-l="Pengguna">${E(l.pengguna)}</td><td data-l="Aksi">${E(l.aksi)}</td><td data-l="Target">${E(l.target)}</td></tr>`).join('')||'<tr><td colspan="4">Belum ada log.</td></tr>'}</tbody></table></div>`;}
+function pgt(){const R=(S.d.Pengaturan||[]).slice();if(!R.some(r=>r.kunci==='brand_logo'))R.unshift({kunci:'brand_logo',nilai:''});return `<div class="hd"><h2>Pengaturan</h2></div><form class="card" id="ps">${R.map(r=>/^(ON|OFF)$/.test(r.nilai)?`<label for="s_${r.kunci}">${E(r.kunci)}</label><select id="s_${r.kunci}" name="${E(r.kunci)}">${['ON','OFF'].map(x=>`<option${x===r.nilai?' selected':''}>${x}</option>`).join('')}</select>`:`<label for="s_${r.kunci}">${E(r.kunci)}</label>${/^tpl_/.test(r.kunci)?`<textarea id="s_${r.kunci}" name="${E(r.kunci)}">${E(r.nilai)}</textarea>`:`<input id="s_${r.kunci}" name="${E(r.kunci)}" value="${E(r.nilai)}">`}`).join('')}<p class="mu">Variabel template: {nama} {profesi} {produk} {harga} {email} {no_wa}. Token WhatsApp (FONNTE_TOKEN) diisi di Script Properties.</p><div class="ac"><button class="btn">Simpan Pengaturan</button></div></form><div class="card" style="margin-top:16px"><h3>Data Dummy</h3><p class="mu">Isi contoh data untuk uji coba, atau hapus bersih sebelum go-live.</p><div class="ac"><button class="btn o" data-a="dm1">Isi data dummy</button><button class="btn dg" data-a="dm0">Hapus data dummy</button></div></div>`;}
+function pgn(){const U=S.d.Pengguna||[];return `<div class="hd"><h2>Role Pengguna</h2></div><div class="tw"><table class="tb"><thead><tr><th>Email</th><th>Nama</th><th>Role</th><th>Status</th></tr></thead><tbody>${U.map(u=>`<tr><td data-l="Email">${E(u.email)}</td><td data-l="Nama">${E(u.nama)}</td><td data-l="Role">${E(u.role)}</td><td data-l="Status">${E(u.status)}</td></tr>`).join('')}</tbody></table></div><form class="card" id="pu"><h3>Tambah / ubah pengguna</h3><label for="u_e">Email pengguna</label><input id="u_e" name="email" type="email" required><label for="u_n">Nama</label><input id="u_n" name="nama"><label for="u_r">Role</label><select id="u_r" name="role"><option>admin</option><option>superadmin</option></select><label for="u_s">Status</label><select id="u_s" name="status"><option>aktif</option><option>nonaktif</option></select><div class="ac"><button class="btn">Simpan Pengguna</button></div></form>`;}
+document.addEventListener('submit',async e=>{const f=e.target;if(f.id==='ps'){e.preventDefault();try{const o=Object.fromEntries(new FormData(f)),r=await run('simpanPengaturan',S.tok,o);if(!r.success)throw new Error(r.message);S.d.Pengaturan.forEach(x=>{if(x.kunci in o)x.nilai=o[x.kunci];});pubBaru();toast('Pengaturan tersimpan');}catch(x){toast(x.message,1);}}
+if(f.id==='pu'){e.preventDefault();try{const o=Object.fromEntries(new FormData(f)),r=await run('simpanPengguna',S.tok,o);if(!r.success)throw new Error(r.message);const u=S.d.Pengguna.find(x=>x.email===o.email.toLowerCase());u?Object.assign(u,o):S.d.Pengguna.push({...o,email:o.email.toLowerCase()});pg('pengguna');toast('Pengguna tersimpan');}catch(x){toast(x.message,1);}}});
+document.addEventListener('click',e=>{const t=e.target.closest('[data-go],[data-co],[data-a]');if(!t||/^(INPUT|SELECT)$/.test(t.tagName))return;if(t.dataset.go)go(t.dataset.go);else if(t.dataset.co)co(t.dataset.co);else if(A[t.dataset.a])A[t.dataset.a](t.dataset.id,t);});
+document.addEventListener('change',e=>{const t=e.target,a=t.dataset.a;if(a==='file')up(t);else if(a==='fu')A.fu(t.dataset.id,t);else if(a==='tg')A.tg(t.dataset.id,t);else if(a==='st'||a==='f1'||a==='f2'||a==='fp'){S[a]=t.value;$('lb').innerHTML=lrows();}else if(a==='rg'){S.r=+t.value;pg('ringkasan');}});
+document.addEventListener('input',e=>{if(e.target.dataset.a==='q'){S.q=e.target.value;$('lb').innerHTML=lrows();}});
+addEventListener('keydown',e=>{if(e.key==='Escape')unmod();});
+
+=======
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 const flt=()=>{const q=S.q.toLowerCase(),d=l=>String(l.waktu).slice(0,10);return(S.d.Leads||[]).filter(l=>(!S.st||l.status_followup===S.st)&&(!S.pf||l.produk_id===S.pf)&&(!S.df||d(l)>=S.df)&&(!S.dt||d(l)<=S.dt)&&(!q||(l.nama+l.email+l.no_wa+l.profesi).toLowerCase().includes(q)));};
 function lrows(){const P=Object.fromEntries(S.d.Produk.map(p=>[p.id,p.nama])),L=flt().slice(0,200);
 return L.map(l=>`<tr><td data-l="Waktu">${E(String(l.waktu).slice(0,16))}</td><td data-l="Nama"><b>${E(l.nama)}</b><br><small>${E(l.profesi)}</small></td><td data-l="Kontak">${E(l.no_wa)}<br><small>${E(l.email)}</small></td><td data-l="Produk">${E(P[l.produk_id]||l.produk_id)}</td><td data-l="Follow-up"><select aria-label="Status follow-up" data-a="fu" data-id="${E(l.id)}">${['baru','dihubungi','closing','batal'].map(s=>`<option${s===l.status_followup?' selected':''}>${s}</option>`).join('')}</select></td><td data-l="Notif"><small>Email: ${E(l.status_notif_email)}<br>WA: ${E(l.status_notif_wa)}</small></td><td class="ac"><a class="btn s o" target="_blank" rel="noopener" aria-label="Chat WhatsApp ${E(l.nama)}" href="https://wa.me/${E(String(l.no_wa).replace(/\D/g,''))}">${ic('chat')}</a></td></tr>`).join('')||'<tr><td colspan="7">Tidak ada leads.</td></tr>';}
@@ -133,6 +238,7 @@ function logp(){run('getLog',S.tok).then(r=>{const e=$('lgb');if(e&&r.success)e.
 const LH=['id','waktu','nama','profesi','no_wa','email','produk_id','status_followup','status_notif_email','status_notif_wa'];
 A.xls=()=>{const r=flt().map(l=>`<tr>${LH.map(h=>`<td>${E(/^[=+\-@]/.test(String(l[h]))?"'"+l[h]:l[h])}</td>`).join('')}</tr>`).join(''),a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff<table><tr>'+LH.map(h=>`<th>${h}</th>`).join('')+'</tr>'+r+'</table>'],{type:'application/vnd.ms-excel'}));a.download='leads.xls';a.click();};
 
+<<<<<<< HEAD
 /* ===== Migrasi data dari app lama (superadmin) ===== */
 const MG=['Hero','Produk','HasilKelas','Testimoni','Kelas','Kurikulum','Leads','Pengguna','Pengaturan','Kunjungan','LogAktivitas'];
 function mig(){return `<div class="hd"><h2>Migrasi Data</h2></div><form class="card" id="mg" onsubmit="return false"><p class="mu">Pindahkan data dari spreadsheet app lama. Spreadsheet lama hanya DIBACA, tidak diubah. Gunakan akun Google yang sama. Aman diulang: tidak ada data ganda.</p><label for="mg_s">URL / ID spreadsheet app lama</label><input id="mg_s" name="source" placeholder="https://docs.google.com/spreadsheets/d/…"><label>Sheet yang dipindahkan</label><div>${MG.map(n=>`<label class="im" style="font-weight:400"><input type="checkbox" name="sheets" value="${n}"${n==='LogAktivitas'?'':' checked'}> ${n}</label>`).join('')}</div><label class="im" style="font-weight:400;margin-top:12px"><input type="checkbox" name="overwrite"> Timpa konten yang sudah ada di app baru (default: tidak)</label><p class="mu">Urutan: pindai dulu (dry-run), cek hasilnya, baru jalankan. Jalankan sekali lagi tepat sebelum pindah (delta sync). Sesi login lama tidak ikut pindah.</p><div class="ac"><button type="button" class="btn o" data-a="mgp">Pindai (Dry-run)</button><button type="button" class="btn" data-a="mgj">Jalankan Import</button></div></form><div id="mgr"></div>`;}
@@ -149,5 +255,11 @@ A.mgp=()=>mgrun(true);A.mgj=()=>mgrun(false);
 /* ===== Boot: tampil dari cache lokal dulu, lalu segarkan (stale-while-revalidate) ===== */
 (function(){let c='';try{c=localStorage.getItem('pub')||'';if(c){S.pub=JSON.parse(c);pub();}}catch(e){c='';}
 run('getKontenPublik').then(r=>{const j=JSON.stringify(r);if(j!==c){localStorage.setItem('pub',j);S.pub=r;pub();}}).catch(e=>{if(!S.pub)$('pub').innerHTML='<div class="w sec"><h2>Konten belum bisa dimuat</h2><p class="mu">'+E(e.message)+'</p></div>';toast('Gagal memuat konten: '+e.message,1);});
+=======
+>>>>>>> 2f2faa1 (Upload pertama)
+/* ===== Boot: tampil dari cache lokal dulu, lalu segarkan (stale-while-revalidate) ===== */
+(function(){let c='';try{c=localStorage.getItem('pub')||'';if(c){S.pub=JSON.parse(c);pub();}}catch(e){c='';}
+run('getKontenPublik').then(r=>{const j=JSON.stringify(r);if(j!==c){localStorage.setItem('pub',j);S.pub=r;pub();}}).catch(e=>toast('Gagal memuat konten: '+e.message,1));
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 if(!sessionStorage.getItem('v')){sessionStorage.setItem('v','1');run('catatKunjungan').catch(()=>{});}
 if(S.tok)run('getDashboard',S.tok).then(r=>{if(r.success)S.d=r.data;else{S.tok='';localStorage.removeItem('tok');}}).catch(()=>{});})();

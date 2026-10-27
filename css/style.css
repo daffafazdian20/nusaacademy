@@ -1,6 +1,18 @@
+<<<<<<< HEAD
 :root{--bg:#FBF5E6;--cr:#F5EBCF;--sf:#FFFDF6;--tx:#3B2412;--mu:#7A6247;--ln:#E8DCB8;--ac:#B45309;--on:#fff;--er:#B3261E;--r:20px;--hb:#F5C542;--hx:#3B2412;--fh:'Fraunces',Georgia,serif;--fm:'Plus Jakarta Sans',system-ui,sans-serif}
 [data-t=dark]{--bg:#1E1610;--cr:#261B12;--sf:#2A1F15;--tx:#F6EAD2;--mu:#C6B393;--ln:#4A3A28;--ac:#F5C542;--on:#2B1A08;--er:#FFB4AB;--hb:#3A2A10;--hx:#F6EAD2}
 [data-v=adm],[data-v=auth]{--r:0}
+=======
+<<<<<<< HEAD
+:root{--bg:#F7EFD8;--sf:#FFFBF0;--tx:#3B2A14;--mu:#6b5a40;--ln:#e0cf9f;--ac:#B45309;--on:#fff;--er:#b3261e;--r:18px;--fh:'Fraunces',Georgia,serif;--fm:'JetBrains Mono',ui-monospace,monospace}
+[data-t=dark]{--bg:#1d1608;--sf:#2a2010;--tx:#f6ecd0;--mu:#c7b88f;--ln:#4a3b1e;--ac:#F5C542;--on:#2b1d02;--er:#ffb4ab}
+[data-v=adm],[data-v=auth]{--r:10px}
+=======
+:root{--bg:#FBF5E6;--cr:#F5EBCF;--sf:#FFFDF6;--tx:#3B2412;--mu:#7A6247;--ln:#E8DCB8;--ac:#B45309;--on:#fff;--er:#B3261E;--r:20px;--hb:#F5C542;--hx:#3B2412;--fh:'Fraunces',Georgia,serif;--fm:'Plus Jakarta Sans',system-ui,sans-serif}
+[data-t=dark]{--bg:#1E1610;--cr:#261B12;--sf:#2A1F15;--tx:#F6EAD2;--mu:#C6B393;--ln:#4A3A28;--ac:#F5C542;--on:#2B1A08;--er:#FFB4AB;--hb:#3A2A10;--hx:#F6EAD2}
+[data-v=adm],[data-v=auth]{--r:0}
+>>>>>>> 2f2faa1 (Upload pertama)
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 system-ui,sans-serif;transition:background .2s,color .2s}
 [data-v=adm] body,[data-v=auth] body{font:13px/1.55 var(--fm)}
@@ -20,7 +32,14 @@ button{font:inherit;cursor:pointer}[hidden]{display:none!important}
 .g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
 .nav{position:sticky;top:0;z-index:20;background:var(--sf);border-bottom:1px solid var(--ln)}
 .nb{display:flex;align-items:center;gap:8px;min-height:56px}.nb nav{display:flex;gap:4px;overflow-x:auto}.nb nav button,.sb nav button{background:none;border:0;color:var(--tx);padding:10px 12px;min-height:44px;white-space:nowrap}.sp{flex:1}
+<<<<<<< HEAD
 .hero{padding:32px 0;background:linear-gradient(var(--ln) 1px,transparent 1px) 0 0/100% 32px,var(--bg);background-blend-mode:soft-light}
+=======
+<<<<<<< HEAD
+=======
+.hero{padding:32px 0;background:linear-gradient(var(--ln) 1px,transparent 1px) 0 0/100% 32px,var(--bg);background-blend-mode:soft-light}
+>>>>>>> 2f2faa1 (Upload pertama)
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 .sl{display:none;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center}.sl.on{display:grid;animation:fi .4s}
 @keyframes fi{from{opacity:0}}
 .hi,.ci,.ph{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r)}
@@ -60,6 +79,25 @@ svg.ch{width:100%;height:auto}
 @media(max-width:800px){.ly{grid-template-columns:1fr}.sb{position:static;height:auto}.sb nav{flex-direction:row;overflow-x:auto}}
 @media(max-width:700px){.tb thead{display:none}.tb tr{display:block;border-bottom:1px solid var(--ln);padding:8px}.tb td{display:flex;justify-content:space-between;gap:8px;border:0;padding:4px 0}.tb td[data-l]::before{content:attr(data-l);color:var(--mu)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+/* Gaya PRD: mustard + krem, pill, tepi bergelombang */
+[data-v=pub] .btn,[data-v=pub] .chip{border-radius:99px}
+.hero{--tx:#3B2A14;--mu:#5a4210;--ln:#c99a1d;--ac:#B45309;--on:#fff;position:relative;color:var(--tx);background:#F5C542;padding:40px 0 72px}
+.hero h1{font-weight:900}
+.hi{box-shadow:0 14px 32px #0000003a}
+.hero::after,.band::before{content:'';position:absolute;left:0;right:0;height:26px;background:var(--bg);-webkit-mask:radial-gradient(circle 15px at 50% 0,#0000 97%,#000) 0 0/30px 100% repeat-x;mask:radial-gradient(circle 15px at 50% 0,#0000 97%,#000) 0 0/30px 100% repeat-x}
+.hero::after{bottom:-1px}
+.band{position:relative;margin-top:32px;padding:64px 16px 44px}.band::before{top:-1px}
+.card{border-radius:var(--r);box-shadow:0 2px 0 var(--ln)}
+.nav{background:var(--sf)}.nb .lg{font-size:20px}
+.sec h2{font-weight:900}
+[data-v=adm] .card,[data-v=auth] .card{box-shadow:none}
+
+=======
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
 body{font-family:var(--fm)}
 [data-v=adm] body,[data-v=auth] body{font:14px/1.55 var(--fm)}
 h1,h2,h3{font-weight:800}
@@ -86,3 +124,7 @@ input,select,textarea{border-radius:14px}details{border-radius:16px}.mb{border-r
 .fab{background:#25D366;border-color:#25D366;color:#fff;box-shadow:0 6px 16px #0003}
 .fl input[type=date]{flex:none;width:auto}
 @media(max-width:700px){.fg{grid-template-columns:1fr}.band .cr{justify-content:flex-start}.hero::after{width:90px;height:90px}}
+<<<<<<< HEAD
+=======
+>>>>>>> 2f2faa1 (Upload pertama)
+>>>>>>> 3e3c17698e83f3607cddf7af29ca952a272c2496
