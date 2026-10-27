@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📋 PANDUAN INSTALASI — NusaAcademy.ID (GAS API + GitHub Pages)
 
 Urutan: **A. Backend (Apps Script) → B. Frontend (GitHub Pages) → C. Uji.**
@@ -57,10 +58,29 @@ git config --global user.email "email-akun-github@contoh.com"
 ### B6. Push pertama
 Jalankan **satu per satu**:
 ```powershell
+=======
+# PANDUAN INSTALASI — NusaAcademy.ID (GAS-PRO-API + GitHub Pages)
+
+## A. Backend (Google Apps Script)
+1. Buka https://script.google.com → **Proyek baru**. Hapus `Code.gs` bawaan, buat file **Kode**, tempel seluruh isi `Kode.gs`.
+2. Pilih fungsi `setupAwal` → ▶ Run **(hanya sekali)** → *Review permissions* → izinkan. Catat URL Spreadsheet di Execution Log. Akun Anda otomatis menjadi **Superadmin**.
+3. Jalankan `pasangTrigger` (sekali).
+4. (Opsional WA) Project Settings → Script Properties → tambah `FONNTE_TOKEN`.
+5. **Deploy → New deployment → Web app** → Execute as: **Me** · Who has access: **Anyone** → Deploy → salin URL berakhiran `/exec`.
+6. Tes: buka `URL_EXEC?action=getKontenPublik` di browser — harus tampil JSON (`brand`, `hero`, `produk`, dst).
+
+## B. Frontend (GitHub Pages)
+1. Ekstrak `nusaacademy-frontend.zip`. Folder hasil ekstraksi **`nusaacademy-frontend`** adalah folder tempat `git init` dijalankan (jangan masuk lebih dalam, jangan naik satu level).
+2. Buka `js/config.js`, ganti `PASTE_URL_EXEC_DI_SINI` dengan URL `/exec`.
+3. Di folder itu `dir` / `ls` harus menampilkan `index.html`, `css`, `js`.
+4. Buat repository **Public** baru di GitHub (jangan centang README), lalu dari folder tersebut:
+```
+>>>>>>> 2f2faa1 (Upload pertama)
 git init
 git add .
 git commit -m "Upload pertama"
 git branch -M main
+<<<<<<< HEAD
 git remote add origin https://github.com/USERNAME/nusaacademy.git
 git push -u origin main
 ```
@@ -101,3 +121,23 @@ Jika halaman masih versi lama: **Ctrl+Shift+R**.
 | Kode login tidak masuk email | Email harus ada di sheet `Pengguna` dengan status `aktif`; cek kuota Gmail harian |
 | Notifikasi WA "gagal" | `FONNTE_TOKEN` belum diisi / toggle `notif_wa` = OFF di Pengaturan |
 | `Password authentication is not supported` | Gunakan Personal Access Token (B6) |
+=======
+git remote add origin https://github.com/USERNAME/NAMA-REPO.git
+git push -u origin main
+```
+(password = Personal Access Token, scope **repo**; layar kosong saat paste itu normal)
+5. Repo → Settings → Pages → Deploy from a branch → `main` `/ (root)` → Save. Situs: `https://USERNAME.github.io/NAMA-REPO/`
+
+## C. Uji
+- Landing page tampil dengan data; slideshow & video jalan.
+- Isi form checkout → cek sheet `Leads`.
+- Login admin: **Masuk Admin** (footer) → email terdaftar → kode OTP dari email.
+- Console (F12): tidak ada error CORS.
+
+## D. Setelah mengubah backend
+Deploy → Manage deployments → ✏️ → Version: **New version** → Deploy (URL `/exec` tetap).
+
+## Catatan
+- Login Google dihapus (tidak bisa di mode REST); gunakan OTP email.
+- Konten publik di-cache 10 menit; perubahan dari dashboard langsung membersihkan cache.
+>>>>>>> 2f2faa1 (Upload pertama)
